@@ -23,6 +23,7 @@ public class ArrayListStack<T> implements Stack<T> {
 	private ArrayList<T> list;
 	
 	public ArrayListStack() {
+		
 		list = new ArrayList<T>();
 	}
 
@@ -72,8 +73,8 @@ public class ArrayListStack<T> implements Stack<T> {
 	 */
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return this.list.size();
 	}
 
 }

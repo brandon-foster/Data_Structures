@@ -44,8 +44,18 @@ public class ArrayListStack<T> implements Stack<T> {
 	 */
 	@Override
 	public T pop() throws EmptyStackException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if (this.list.size() == 0) {
+			throw new EmptyStackException();
+		}
+		
+		// Gets the item at the top of the stack.
+		int index = this.list.size() - 1;
+		T item = this.list.get(index);
+		
+		// Removes the item at the top of the stack.
+		this.list.remove(index);
+		return item;
 	}
 
 	/**

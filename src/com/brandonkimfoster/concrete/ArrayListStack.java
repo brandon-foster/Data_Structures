@@ -64,8 +64,9 @@ public class ArrayListStack<T> implements Stack<T> {
 	 */
 	@Override
 	public T peek() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		int topIndex = this.list.size() - 1;
+		return this.list.get(topIndex);
 	}
 
 	/**

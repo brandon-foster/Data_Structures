@@ -26,24 +26,40 @@ public class ArrayListStack<T> implements Stack<T> {
 		list = new ArrayList<T>();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void push(T item) {
-		// TODO Auto-generated method stub
-
+		
+		if (item == null) {
+			throw new NullPointerException();
+		}
+		
+		this.list.add(item);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public T pop() throws EmptyStackException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public T peek() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub

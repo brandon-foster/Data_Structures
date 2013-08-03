@@ -16,30 +16,37 @@ public interface Stack<T> {
 	/**
 	 * Pushes a new item on the stack.
 	 * 
-	 * @param the
-	 *            item to push on the top of the stack
+	 * @param item
+	 *            the item to push on the top of the stack
 	 */
 	public void push(T item);
 
 	/**
-	 * Removes and returns the next item, if the stack is not null. If the
-	 * stack is null, it throws an exception.
+	 * Removes and returns the next item, if the stack is not null If the stack
+	 * is null, it throws an exception
 	 * 
 	 * @return the item on the top of the stack
 	 */
 	public T pop() throws EmptyStackException;
 
 	/**
-	 * Returns the next item, but does not remove it.
+	 * Returns the next item, but does not remove it
 	 * 
 	 * @return the item on the top of the stack
 	 */
 	public T peek();
 
 	/**
-	 * Returns the size of the stack.
+	 * Returns the size of the stack
 	 * 
 	 * @return the number of items in the stack
 	 */
 	public int size();
+
+	/**
+	 * Checks if the stack is empty
+	 * 
+	 * @return true if the stack is empty, false if the stack is not empty
+	 */
+	boolean isEmpty();
 }

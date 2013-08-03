@@ -17,13 +17,14 @@ import com.brandonkimfoster.api.Stack;
  */
 public class ArrayListStack<T> implements Stack<T> {
 
+
+	private ArrayList<T> list;
+
 	/**
 	 * Constructor
 	 */
-	private ArrayList<T> list;
-	
 	public ArrayListStack() {
-		
+
 		list = new ArrayList<T>();
 	}
 
@@ -32,11 +33,11 @@ public class ArrayListStack<T> implements Stack<T> {
 	 */
 	@Override
 	public void push(T item) {
-		
+
 		if (item == null) {
 			throw new NullPointerException();
 		}
-		
+
 		this.list.add(item);
 	}
 
@@ -45,15 +46,15 @@ public class ArrayListStack<T> implements Stack<T> {
 	 */
 	@Override
 	public T pop() throws EmptyStackException {
-		
-		if (this.list.size() == 0) {
+
+		if (this.isEmpty()) {
 			throw new EmptyStackException();
 		}
-		
+
 		// Gets the item at the top of the stack.
 		int topIndex = this.list.size() - 1;
 		T item = this.list.get(topIndex);
-		
+
 		// Removes the item at the top of the stack.
 		this.list.remove(topIndex);
 		return item;
@@ -64,7 +65,7 @@ public class ArrayListStack<T> implements Stack<T> {
 	 */
 	@Override
 	public T peek() {
-		
+
 		int topIndex = this.list.size() - 1;
 		return this.list.get(topIndex);
 	}
@@ -74,8 +75,20 @@ public class ArrayListStack<T> implements Stack<T> {
 	 */
 	@Override
 	public int size() {
-		
+
 		return this.list.size();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean isEmpty() {
+				
+		if (this.list.size() == 0) {
+			return true;
+		}
+		return false;
 	}
 
 }

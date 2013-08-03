@@ -51,11 +51,11 @@ public class ArrayListStack<T> implements Stack<T> {
 		}
 		
 		// Gets the item at the top of the stack.
-		int index = this.list.size() - 1;
-		T item = this.list.get(index);
+		int topIndex = this.list.size() - 1;
+		T item = this.list.get(topIndex);
 		
 		// Removes the item at the top of the stack.
-		this.list.remove(index);
+		this.list.remove(topIndex);
 		return item;
 	}
 

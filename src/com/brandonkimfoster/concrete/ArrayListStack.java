@@ -10,7 +10,7 @@ import com.brandonkimfoster.api.Stack;
  * that uses the adapter pattern, having an ArrayList store its items.
  * 
  * @author Brandon Foster
- * @version 2012.08.03
+ * @version 2013.08.03
  * 
  * @param <T>
  *            the type of elements stored in the stack

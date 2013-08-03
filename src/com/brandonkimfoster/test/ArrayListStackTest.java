@@ -9,6 +9,13 @@ import org.junit.Test;
 
 import com.brandonkimfoster.concrete.ArrayListStack;
 
+/**
+ * Test cases for ArrayListStack.
+ * 
+ * @author Brandon Foster
+ * @version 2013.08.03
+ *
+ */
 public class ArrayListStackTest {
 
 	ArrayListStack<String> stack;

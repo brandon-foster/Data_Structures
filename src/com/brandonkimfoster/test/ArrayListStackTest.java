@@ -92,8 +92,6 @@ public class ArrayListStackTest {
 		} catch (Exception exception) {
 			thrown = exception;
 		}
-		System.out.println(thrown);
-		System.out.println(this.stack.size());
 		assertNotNull(thrown);
 		assertTrue(thrown instanceof EmptyStackException);
 	}

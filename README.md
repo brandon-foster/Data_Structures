@@ -1,7 +1,8 @@
-ArrayList_Stack
+Data_Structures
 ===============
 
-A personal exercise for implementing a stack with a Java ArrayList.
+A respository of classic data structures in Java
 
-- Adapter pattern
-- JUnit unit testing
+## ArrayList Stack
+
+An implementation of a stack data structure using Java's ArrayList, demonstrating the _**adapter pattern**_.

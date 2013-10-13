@@ -1,4 +1,4 @@
-package com.brandonkimfoster.api;
+package com.brandonkimfoster.array_list_stack;
 
 import java.util.EmptyStackException;
 

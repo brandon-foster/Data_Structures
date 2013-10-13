@@ -1,4 +1,8 @@
-ArrayList_Stack
+Data_Structures
 ===============
 
-A personal exercise for implementing a stack with a Java ArrayList.
+A respository of classic data structures in Java
+
+## ArrayList Stack
+
+An implementation of the stack data structure using Java's ArrayList, demonstrating the _**adapter pattern**_.

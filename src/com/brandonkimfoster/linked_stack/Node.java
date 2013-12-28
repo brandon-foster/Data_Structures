@@ -1,49 +1,31 @@
 package com.brandonkimfoster.linked_stack;
 
 /**
- * A "node" represents a single element in a sequence. Think of it like a link
- * in a chain -- the node contains an element of data and reference to the
- * previous and next elements in the sequence.
- *
- * This node is "doubly linked" -- it has references to the next node in the
- * chain and the previous node in the chain. You must implement the join and
- * split methods to manage both connections simultaneously, ensuring that the
- * consistency of links in the chain is preserved at all times.
- *
- * @param <E> the element type stored in the node
- *
- * @author Tony Allevato (authored class skeleton)
+ * A node stores a data item and a reference to the node that came before it.
+ * If there is no node that precedes the reference contains a null value.
+ * 
  * @author Brandon Foster
  */
-public class Node<E>
+public class Node<T>
 {
-    //~ Fields ................................................................
-
-    // The data element stored in the node.
-    private E data;
-
-    // The next node in the sequence.
-    private Node<E> next;
-
-    // The previous node in the sequence.
-    private Node<E> previous;
+	// The item the node holds
+    private T data;
+    
+    // Reference to the previous node
+    private Node<T> previous;
 
 
-    //~ Constructors ..........................................................
-
-    // ----------------------------------------------------------
+    // Constructor
     /**
-     * Creates a new Node with the specified data.
+     * Creates a new Node with the passed in data.
      *
      * @param data the data for the node
      */
-    public Node(E data)
+    public Node(T data)
     {
         this.data = data;
+        this.previous = null;
     }
-
-
-    //~ Public methods ........................................................
 
     // ----------------------------------------------------------
     /**
@@ -51,35 +33,10 @@ public class Node<E>
      *
      * @return the data in the node
      */
-    public E data()
+    public T data()
     {
-        return data;
+        return this.data;
     }
-
-
-    // ----------------------------------------------------------
-    /**
-     * Sets the data in the node.
-     *
-     * @param newData the new data to put in the node
-     */
-    public void setData(E newData)
-    {
-        data = newData;
-    }
-
-
-    // ----------------------------------------------------------
-    /**
-     * Gets the node that follows this one in the sequence.
-     *
-     * @return the node that follows this one in the sequence
-     */
-    public Node<E> next()
-    {
-        return next;
-    }
-
 
     // ----------------------------------------------------------
     /**
@@ -87,65 +44,17 @@ public class Node<E>
      *
      * @return the node that precedes this one in the sequence
      */
-    public Node<E> previous()
+    public Node<T> previous()
     {
-        return previous;
+        return this.previous;
     }
-
-
-    // ----------------------------------------------------------
+    
     /**
-     * <p>
-     * Joins this node to the specified node so that the one passed as a
-     * parameter follows this node. In other words, writing {@code A.join(B)}
-     * would create the linkage A <-> B.
-     * </p><p>
-     * This method should throw an IllegalStateException if this node already
-     * has another node following it, or if {@code newNext} already has another
-     * node preceding it. In this case, it's up to the user to call
-     * {@link #split()} to sever the connection between the nodes before they
-     * can join them to something else.
-     * </p><p>
-     * It is acceptable for {@code newNext} to be null if this node's next
-     * reference is already null. This situation should not throw an exception.
-     * </p><p>
-     * After connecting the nodes, the method should return {@code this}, which
-     * allows users to nest multiple calls to join to create longer chains,
-     * like {@code A.join(B.join(C))}.
-     * </p>
-     *
-     * @param newNext the node that should follow this one
-     * @return this node
-     *
-     * @throws IllegalStateException if there is already a node following this
-     *     node or if there is already a node preceding {@code newNext}
+     * Sets the reference to the previous node
      */
-    public Node<E> join(Node<E> newNext)
+    public void setPrevious(Node<T> node)
     {
-        // TODO: remove this throw statement when you complete this method
-        throw new UnsupportedOperationException(
-                "You have not implemented join() yet.");
+    	this.previous = node;
     }
-
-
-    // ----------------------------------------------------------
-    /**
-     * <p>
-     * Splits this node from its follower and then returns the follower.
-     * </p><p>
-     * It is acceptable for this method to be called on a node that has a null
-     * follower. In that case, the method simply does nothing and returns null.
-     * </p><p>
-     * There are no circumstances under which this method should throw an
-     * exception.
-     * </p>
-     *
-     * @return the node that followed this node before they were split
-     */
-    public Node<E> split()
-    {
-        // TODO: remove this throw statement when you complete this method
-        throw new UnsupportedOperationException(
-                "You have not implemented split() yet");
-    }
+    
 }

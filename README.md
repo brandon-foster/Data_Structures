@@ -7,6 +7,6 @@ A respository of classic data structures written in Java
 
 An implementation of the stack data structure using Java's ArrayList, demonstrating the _**adapter pattern**_.
 
-### Linked Stack (in progress)
+### Linked Stack
 
 A stack using an underlying chain of linked nodes

@@ -37,7 +37,7 @@ public interface Stack<T> {
 	public T peek();
 
 	/**
-	 * Returns the size of the stack
+	 * Returns the number of items in the stack
 	 * 
 	 * @return the number of items in the stack
 	 */

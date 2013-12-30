@@ -14,7 +14,7 @@ import com.brandonkimfoster.concrete.ArrayListStack;
  * 
  * @author Brandon Foster
  * @version 2013.08.03
- * 
+ *
  */
 public class ArrayListStackTest {
 

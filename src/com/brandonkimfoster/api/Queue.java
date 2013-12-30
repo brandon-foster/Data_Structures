@@ -7,7 +7,7 @@ package com.brandonkimfoster.api;
  * @version 2013.12.30
  * 
  * @param <T>
- *            the type of elements stored in the stack
+ *            the type of elements stored on the queue
  */
 public interface Queue<T> {
 

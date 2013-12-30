@@ -5,11 +5,24 @@ import java.util.EmptyStackException;
 import com.brandonkimfoster.api.Stack;
 import com.brandonkimfoster.Node;
 
+/**
+ * A concrete implementation of the Stack interface in com.brandonkimfoster.api
+ * using and underlying chain of linked nodes.
+ * 
+ * @author Brandon Foster
+ * @version 2013.12.29
+ * 
+ * @param <T>
+ *            the type of elements stored in the stack
+ */
 public class LinkedStack<T> implements Stack<T> {
 
 	private Node<T> top;
 	private int size;
 
+	/**
+	 * Constructor
+	 */
 	public LinkedStack() {
 		this.top = null;
 		this.size = 0;

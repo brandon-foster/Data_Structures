@@ -4,7 +4,7 @@ Data_Structures
 A respository of classic data structures written in Java
 
 ### Stack ADT
-##### ArrayList Stack
+##### Array Based Stack
 
 An implementation of the stack data structure using an underlying array to store items, taking advantage of Java's ArrayList, demonstrating the _**adapter pattern**_.
 
@@ -14,5 +14,5 @@ A stack (last in, first out) abstract data type using an underlying chain of lin
 
 
 ### Queue ADT
-##### LinkedQueue
+##### Linked Queue
 A queue (first in, first out) abstract data type using an underlying chain of linked nodes.

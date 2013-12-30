@@ -20,17 +20,17 @@ public interface Queue<T> {
 	public void enqueue(T item);
 
 	/**
-	 * Returns and removes the element at the front of the queue
+	 * Returns and removes the element at the head of the queue
 	 */
 	public T dequeue();
 
 	/**
-	 * Returns the element at the front of the queue without removing it from
+	 * Returns the element at the head of the queue without removing it from
 	 * the queue.
 	 * 
-	 * @return the element at the front of the queue
+	 * @return the element at the head of the queue
 	 */
-	public T front();
+	public T head();
 
 	/**
 	 * Returns the number of elements in the queue

@@ -14,7 +14,7 @@ import com.brandonkimfoster.concrete.LinkedStack;
  * 
  * @author Brandon Foster
  * @version 2013.12.28
- *
+ * 
  */
 public class LinkedStackTest {
 

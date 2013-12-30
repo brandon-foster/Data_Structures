@@ -17,7 +17,6 @@ import com.brandonkimfoster.api.Stack;
  */
 public class ArrayListStack<T> implements Stack<T> {
 
-
 	private ArrayList<T> list;
 
 	/**
@@ -78,13 +77,13 @@ public class ArrayListStack<T> implements Stack<T> {
 
 		return this.list.size();
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean isEmpty() {
-				
+
 		if (this.list.size() == 0) {
 			return true;
 		}

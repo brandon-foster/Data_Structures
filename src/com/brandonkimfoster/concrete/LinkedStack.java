@@ -6,12 +6,12 @@ import com.brandonkimfoster.api.Stack;
 import com.brandonkimfoster.Node;
 
 public class LinkedStack<T> implements Stack<T> {
-	
+
 	private Node<T> top;
 	private int size;
-	
+
 	public LinkedStack() {
-		this.top = null;	
+		this.top = null;
 		this.size = 0;
 	}
 
@@ -24,7 +24,7 @@ public class LinkedStack<T> implements Stack<T> {
 			throw new NullPointerException();
 		}
 		Node<T> newNode = new Node<T>(item);
-		newNode.setPrevious(this.top);
+		newNode.setLink(this.top);
 		this.top = newNode;
 		this.size++;
 	}
@@ -38,7 +38,7 @@ public class LinkedStack<T> implements Stack<T> {
 			throw new EmptyStackException();
 		}
 		T theData = top.data();
-		this.top = top.previous();
+		this.top = top.getLink();
 		this.size--;
 		return theData;
 	}
@@ -48,7 +48,7 @@ public class LinkedStack<T> implements Stack<T> {
 	 */
 	@Override
 	public T peek() {
-		
+
 		return this.top.data();
 	}
 

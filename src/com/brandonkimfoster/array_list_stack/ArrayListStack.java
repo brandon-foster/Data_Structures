@@ -3,6 +3,8 @@ package com.brandonkimfoster.array_list_stack;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 
+import com.brandonkimfoster.api.Stack;
+
 /**
  * A concrete implementation of the Stack interface in com.brandonkimfoster.api
  * that uses the adapter pattern, having an ArrayList store its items.

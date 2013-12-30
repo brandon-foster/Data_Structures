@@ -2,7 +2,7 @@ package com.brandonkimfoster.linked_stack;
 
 import java.util.EmptyStackException;
 
-import com.brandonkimfoster.array_list_stack.Stack;
+import com.brandonkimfoster.api.Stack;
 import com.brandonkimfoster.linked_stack.Node;
 
 public class LinkedStack<T> implements Stack<T> {

@@ -7,7 +7,7 @@ import java.util.EmptyStackException;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.brandonkimfoster.array_list_stack.ArrayListStack;
+import com.brandonkimfoster.concrete.ArrayListStack;
 
 /**
  * Test cases for ArrayListStack.

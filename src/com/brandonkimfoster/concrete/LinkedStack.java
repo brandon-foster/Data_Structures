@@ -1,9 +1,9 @@
-package com.brandonkimfoster.linked_stack;
+package com.brandonkimfoster.concrete;
 
 import java.util.EmptyStackException;
 
 import com.brandonkimfoster.api.Stack;
-import com.brandonkimfoster.linked_stack.Node;
+import com.brandonkimfoster.Node;
 
 public class LinkedStack<T> implements Stack<T> {
 	

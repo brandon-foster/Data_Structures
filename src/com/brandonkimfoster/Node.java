@@ -1,4 +1,4 @@
-package com.brandonkimfoster.linked_stack;
+package com.brandonkimfoster;
 
 /**
  * A node stores a data item and a reference to the node that came before it.

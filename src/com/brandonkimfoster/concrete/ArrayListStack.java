@@ -1,4 +1,4 @@
-package com.brandonkimfoster.array_list_stack;
+package com.brandonkimfoster.concrete;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;

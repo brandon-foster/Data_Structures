@@ -7,7 +7,7 @@ import java.util.EmptyStackException;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.brandonkimfoster.linked_stack.LinkedStack;
+import com.brandonkimfoster.concrete.LinkedStack;
 
 /**
  * Test cases for LinkedStack.

@@ -1,5 +1,7 @@
 package com.brandonkimfoster.concrete;
 
+import java.util.NoSuchElementException;
+
 import com.brandonkimfoster.Node;
 import com.brandonkimfoster.api.Queue;
 
@@ -15,15 +17,17 @@ import com.brandonkimfoster.api.Queue;
  */
 public class LinkedQueue<T> implements Queue<T> {
 
-	private Node<T> front;
-	private Node<T> rear;
+	private Node<T> head;
+	private Node<T> tail;
+	private int size;
 
 	/**
 	 * Constructor
 	 */
 	public LinkedQueue() {
-		this.front = null;
-		this.rear = null;
+		this.head = null;
+		this.tail = null;
+		this.size = 0;
 	}
 
 	/**
@@ -31,18 +35,24 @@ public class LinkedQueue<T> implements Queue<T> {
 	 */
 	@Override
 	public void enqueue(T item) {
+		// Node to wrap the item
 		Node<T> newNode = new Node<T>(item);
-		// when queue is empty to begin with, rear is null
-		if (this.rear == null) {
-			// front and rear point to the same node when there is only one item
+
+		// when queue is empty to begin with, tail is null
+		if (this.tail == null) {
+			// head and tail point to the same node when there is only one item
 			// in the queue
-			this.front = newNode;
+			this.head = newNode;
 		} else {
-			// make the node at rear point to the newNode
-			this.rear.setLink(newNode);
+			// make the node at tail point to the newNode
+			this.tail.setLink(newNode);
 		}
-		// update rear to point to the newly added newNode
-		this.rear = newNode;
+
+		// update tail to point to the newNode
+		this.tail = newNode;
+
+		// increment the size of the queue
+		this.size++;
 	}
 
 	/**
@@ -50,17 +60,47 @@ public class LinkedQueue<T> implements Queue<T> {
 	 */
 	@Override
 	public T dequeue() {
-		// TODO Auto-generated method stub
-		return null;
+
+		if (this.isEmpty()) {
+			throw new NoSuchElementException();
+		}
+
+		// store the item at the head of the queue
+		T item = this.head.data();
+
+		// update head to point to the next item the queue
+		this.head = this.head.getLink();
+
+		// if the update pointer to the next item (the item immediately after
+		// the item being dequeue'd) is null, the queue is empty,
+		// so update tail to be null as well
+		if (this.head == null) {
+			this.tail = null;
+		}
+
+		// decrement the size of the queue
+		this.size--;
+
+		return item;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public T front() {
-		// TODO Auto-generated method stub
-		return null;
+	public T head() {
+		if (this.head == null) {
+			throw new NoSuchElementException();
+		}
+		return this.head.data();
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean isEmpty() {
+		return (this.size() == 0);
 	}
 
 	/**
@@ -68,17 +108,7 @@ public class LinkedQueue<T> implements Queue<T> {
 	 */
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.size;
 	}
 
 }

@@ -13,7 +13,7 @@ import com.brandonkimfoster.api.Queue;
  * @version 2013.12.29
  * 
  * @param <T>
- *            the type of elements stored in the stack
+ *            the type of elements stored in the queue
  */
 public class LinkedQueue<T> implements Queue<T> {
 
@@ -94,7 +94,7 @@ public class LinkedQueue<T> implements Queue<T> {
 		}
 		return this.head.data();
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

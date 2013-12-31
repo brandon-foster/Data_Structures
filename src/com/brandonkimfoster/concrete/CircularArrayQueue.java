@@ -80,6 +80,7 @@ public class CircularArrayQueue<T> implements Queue<T> {
 
 		this.head = 0;
 		this.tail = this.size;
+		this.capacity = newArray.length;
 		this.array = newArray;
 	}
 
@@ -133,7 +134,7 @@ public class CircularArrayQueue<T> implements Queue<T> {
 	 */
 	@Override
 	public boolean isEmpty() {
-		return (this.head == this.tail);
+		return (this.size == 0);
 	}
 
 }

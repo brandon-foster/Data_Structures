@@ -14,8 +14,12 @@ A stack (last in, first out) abstract data type using an underlying chain of lin
 
 
 ### Queue ADT
+##### Circular Array Based Queue
+A queue using an underlying circular array.
+
 ##### Linked Queue
 A queue (first in, first out) abstract data type using an underlying chain of linked nodes.
 
-##### Circular Array Based Queue
-A queue using an underlying circular array.
+### List ADT
+##### Array Based List
+A list using an underlying array to store items.

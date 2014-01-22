@@ -37,6 +37,8 @@ public interface List<T> {
 
 	/**
 	 * Remove and return the current element from the list.
+	 *
+	 * @return the current element if there is one, null otherwise
 	 */
 	T remove();
 

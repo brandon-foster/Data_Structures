@@ -125,8 +125,8 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public void moveToStart() {
-		// TODO Auto-generated method stub
-
+		
+		current = 0;
 	}
 
 	/**
@@ -134,8 +134,8 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public void moveToEnd() {
-		// TODO Auto-generated method stub
-
+		
+		current = listSize;
 	}
 
 	/**
@@ -143,8 +143,10 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public void prev() {
-		// TODO Auto-generated method stub
-
+		
+		if (current != 0) {
+			current --;
+		}
 	}
 
 	/**
@@ -152,8 +154,11 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public void next() {
-		// TODO Auto-generated method stub
-
+		
+		
+		if (current < listSize) {
+			current++;
+		}
 	}
 
 	/**
@@ -161,8 +166,8 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public int length() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return listSize;
 	}
 
 	/**
@@ -170,8 +175,8 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public int currPos() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return current;
 	}
 
 	/**
@@ -179,8 +184,13 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public boolean moveToPos(int pos) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		// return false if there is no current item
+		if ((pos < 0) || (pos >= listSize)) {
+			return false;
+		}
+		current = pos;
+		return true;
 	}
 
 	/**
@@ -188,8 +198,8 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public boolean isAtEnd() {
-		// TODO Auto-generated method stub
-		return false;
+
+		return current == listSize;
 	}
 
 	/**
@@ -197,8 +207,12 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public T getValule() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		// return null if there is no current item
+		if ((current < 0) || (current >= listSize)) {
+			return null;
+		}
+		return array[current];
 	}
 
 }

@@ -74,6 +74,7 @@ public class ArrayList<T> implements List<T> {
 				array[i] = array[i - 1];
 			}
 			array[current] = item; // insert the item at the position "current"
+			return true;
 		}
 		// return false if the list does not have enough room to insert an item
 		return false;

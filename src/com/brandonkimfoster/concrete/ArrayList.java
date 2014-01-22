@@ -74,6 +74,7 @@ public class ArrayList<T> implements List<T> {
 				array[i] = array[i - 1];
 			}
 			array[current] = item; // insert the item at the position "current"
+			listSize++;
 			return true;
 		}
 		// return false if the list does not have enough room to insert an item
@@ -85,7 +86,11 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public boolean append(T item) {
-		// TODO Auto-generated method stub
+		if (listSize < maxSize) {
+			array[listSize] = item;
+			listSize++;
+			return true;
+		}
 		return false;
 	}
 

@@ -17,13 +17,47 @@ import com.brandonkimfoster.api.List;
  */
 public class ArrayList<T> implements List<T> {
 
+	private T[] array; // the underlying array to hold the items
+	private static final int defaultSize = 10; // the default value used in the
+												// no-argument constructor
+	private int maxSize; // the capacity of the list
+	private int listSize; // the number of items in the list
+	private int current; // the index of the current item in the list
+
+	/**
+	 * Create an ArrayList with the specified size for the maximum size.
+	 * 
+	 * Suppress "unchecked" warnings because it is certain the underlying array
+	 * will only hold type T items
+	 * 
+	 * @param capacity
+	 *            the number of elements the list can hold
+	 */
+	@SuppressWarnings("unchecked")
+	public ArrayList(int size) {
+
+		maxSize = size;
+		listSize = current = 0;
+		array = (T[]) new Object[size];
+	}
+
+	/**
+	 * No-argument constructor with the default size as the capacity.
+	 */
+	public ArrayList() {
+
+		this(defaultSize);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
 
+		// clearing the list is the same as setting the size and current
+		// position to 0
+		listSize = current = 0;
 	}
 
 	/**
@@ -31,7 +65,17 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public boolean insert(T item) {
-		// TODO Auto-generated method stub
+		
+		// ensure there is enough room to insert an item
+		if (listSize < maxSize) {
+			// shift the elements after the current item back one position to
+			// make room for the item to be inserted
+			for (int i = listSize; i > current; i--) {
+				array[i] = array[i - 1];
+			}
+			array[current] = item; // insert the item at the position "current"
+		}
+		// return false if the list does not have enough room to insert an item
 		return false;
 	}
 

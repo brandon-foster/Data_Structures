@@ -102,8 +102,22 @@ public class ArrayList<T> implements List<T> {
 	 */
 	@Override
 	public T remove() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		// return null if there is no current item
+		if ((current < 0) || (current >= listSize)) {
+			return null;
+		}
+		
+		T item = array[current]; // store the value to be removed and returned
+		
+		// shift all items after the current position down one position
+		for (int i = current; i < listSize - 1; i++) {
+			array[i] = array[i + 1];
+		}
+		
+		listSize--; // decrement the size of the list
+		
+		return item;
 	}
 
 	/**
